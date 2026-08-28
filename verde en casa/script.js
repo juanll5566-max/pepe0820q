@@ -1,6 +1,6 @@
-/* ============ DATOS ============ */
 
-// Recomendaciones por espacio (grid 3x2)
+
+// Recomendaciones por espacio 
 const recomendaciones = [
   { titulo:"Sala de estar", texto:"Plantas grandes de hoja como la Palmera Areca o el Ficus aportan frescura y llenan espacios amplios con luz indirecta.", img:"https://images.unsplash.com/photo-1493552152660-f915ab47ae9d?auto=format&fit=crop&w=500&q=80" },
   { titulo:"Dormitorio", texto:"Elige especies que purifiquen el aire durante la noche, como la Sansevieria o el Aloe Vera, ideales para descansar mejor.", img:"https://images.unsplash.com/photo-1615874959474-d609969a20ed?auto=format&fit=crop&w=500&q=80" },
@@ -10,7 +10,7 @@ const recomendaciones = [
   { titulo:"Balcón o terraza", texto:"Geranios, Bromelias y Gardenias disfrutan de luz solar directa y le dan color a tus espacios exteriores.", img:"https://images.unsplash.com/photo-1598880940639-8c0aca2a2d18?auto=format&fit=crop&w=500&q=80" },
 ];
 
-// Catálogo de plantas (grid 3x4)
+// Catálogo de plantas 
 const plantas = [
   { nombre:"Anthurium", desc:"Hojas brillantes en forma de corazón, ideal para interiores luminosos sin sol directo.", tag:"Interior", img:"https://images.unsplash.com/photo-1526397751294-331021109fbd?auto=format&fit=crop&w=400&q=80" },
   { nombre:"Begonia", desc:"Flores coloridas y follaje decorativo, perfecta para espacios con luz filtrada.", tag:"Flor", img:"https://images.unsplash.com/photo-1587592302891-3f4a1bc7c22e?auto=format&fit=crop&w=400&q=80" },
@@ -26,7 +26,7 @@ const plantas = [
   { nombre:"Geranio", desc:"Flores llamativas todo el año, perfecto para balcones y terrazas soleadas.", tag:"Flor", img:"https://images.unsplash.com/photo-1599598177991-ec67b5c37318?auto=format&fit=crop&w=400&q=80" },
 ];
 
-// Guía de cuidados (feed vertical)
+// Guía de cuidados 
 const cuidados = [
   { nombre:"Anthurium", img:"https://images.unsplash.com/photo-1526397751294-331021109fbd?auto=format&fit=crop&w=300&q=80", riego:"1 vez por semana", luz:"Indirecta media", temp:"18°C - 27°C" },
   { nombre:"Palmera Areca", img:"https://images.unsplash.com/photo-1512428813834-c702c7702b78?auto=format&fit=crop&w=300&q=80", riego:"2 veces por semana", luz:"Indirecta brillante", temp:"18°C - 24°C" },
@@ -38,7 +38,7 @@ const cuidados = [
   { nombre:"Menta", img:"https://images.unsplash.com/photo-1628556270448-4d4e4148e1b1?auto=format&fit=crop&w=300&q=80", riego:"Mantener tierra húmeda", luz:"Indirecta brillante", temp:"15°C - 24°C" },
 ];
 
-// Beneficios (grid 4x2)
+// Beneficios 
 const beneficios = [
   { ic:"🌬️", titulo:"Purifican el aire", texto:"Filtran toxinas y liberan oxígeno fresco." },
   { ic:"😌", titulo:"Reducen el estrés", texto:"El verde en casa calma la mente y baja la ansiedad." },
@@ -50,7 +50,7 @@ const beneficios = [
   { ic:"😴", titulo:"Mejoran el sueño", texto:"Algunas especies favorecen un descanso más profundo." },
 ];
 
-/* ============ RENDER ============ */
+
 
 function renderRecomendaciones(){
   const grid = document.getElementById('recGrid');
@@ -120,11 +120,11 @@ renderPlantas(plantas);
 renderCuidados();
 renderBeneficios();
 
-/* ============ BUSCADOR / FILTRO ============ */
+
 const searchInput = document.getElementById('plantSearch');
 searchInput.addEventListener('input', () => {
   const q = searchInput.value.trim().toLowerCase();
-  plantasVisibles = 6; // reinicia paginación al buscar
+  plantasVisibles = 6; 
   const filtradas = plantas.filter(p =>
     p.nombre.toLowerCase().includes(q) ||
     p.desc.toLowerCase().includes(q) ||
@@ -133,7 +133,7 @@ searchInput.addEventListener('input', () => {
   renderPlantas(filtradas);
 });
 
-/* ============ CARGAR MÁS ============ */
+
 document.getElementById('loadMoreBtn').addEventListener('click', () => {
   plantasVisibles += 6;
   const q = searchInput.value.trim().toLowerCase();
@@ -145,7 +145,7 @@ document.getElementById('loadMoreBtn').addEventListener('click', () => {
   renderPlantas(filtradas);
 });
 
-/* ============ FORMULARIO DE CONTACTO ============ */
+
 const contactForm = document.getElementById('contactForm');
 const formMsg = document.getElementById('formMsg');
 contactForm.addEventListener('submit', (e) => {
@@ -155,7 +155,7 @@ contactForm.addEventListener('submit', (e) => {
   setTimeout(() => formMsg.classList.remove('show'), 6000);
 });
 
-/* ============ MENÚ MÓVIL ============ */
+
 const menuToggle = document.getElementById('menuToggle');
 const mainNav = document.getElementById('mainNav');
 menuToggle.addEventListener('click', () => {
